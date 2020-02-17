@@ -1,0 +1,58 @@
+{%  extends 'BusDriver/main.html' %}
+
+{% block content %}
+
+	<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Driver:</h5>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="">Update Driver</a>
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Contact Information</h5>
+			<hr>
+			<p>Name: {{driver.name}}</p>
+			<p>Phone: {{driver.phone}}</p>
+			<p>Age: {{driver.age}}</p>
+			<p>Address: {{driver.address}}</p>
+		</div>
+	</div>
+
+</div>
+
+
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Name</th>
+					<th>Address</th>
+					<th>Phone</th>
+					<th>Age</th>
+					<th>Update</th>
+					<th>Remove</th>
+				</tr>
+
+				<tr>
+					<td>{{driver.name}}</td>
+					<td>{{driver.address}}</td>
+					<td>{{driver.phone}}</td>
+					<td>{{driver.age}}</td>
+					<td><a class="btn btn-sm btn-info" href="{% url 'update_driver' driver.id %}">Update</a></td>
+
+					<td><a class="btn btn-sm btn-danger" href="{% url 'delete_driver' driver.id %}">Delete</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
