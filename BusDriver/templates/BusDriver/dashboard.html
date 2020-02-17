@@ -1,0 +1,83 @@
+{% extends 'BusDriver/main.html' %}
+{% block content %}
+<br>
+<div class="row">
+	<div class="col-md-5">
+		<h5>Drivers:</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="{%url 'create_driver'%}">Create Driver</a>
+			<table class="table table-sm">
+				<tr>
+					<th>Driver</th>
+					<th>Phone</th>
+					<th>View</th>
+					<th>Update</th>
+					<th>Delete</th>
+				</tr>
+
+				{% for driver in drivers %}
+				<tr>
+					<td>{{driver.name}}</td>
+					<td>{{driver.phone}}</td>
+					<td>
+						<a class = "btn btn-sm btn-info" href="{% url 'driver-page' driver.id %}" >
+							View</a> </td>
+					<td>
+						<a class = "btn btn-sm btn-info" href="{% url 'update_driver' driver.id %}" >
+							Update</a> </td>
+					<td>
+						<a class = "btn btn-sm btn-danger" href="{% url 'delete_driver' driver.id %}" >
+							Delete</a> </td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+
+
+	<div class="col-md-5">
+		<h5>Buses:</h5>
+		<hr>
+		<div class="card card-body" >
+			<form>
+				{{myFilter.form}}
+				<button class="btn btn-primary" type="submit">Search</button>
+			</form>
+		</div>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="{%url 'create_bus'%}">Create Bus</a>
+			<table class="table table-sm">
+				<tr>
+					<th>destination</th>
+					<th>origin</th>
+					<td>View</td>
+					<th>Update</th>
+					<th>Delete</th>
+				</tr>
+
+				{% for bus in buses %}
+				<tr>
+					<td>{{bus.destination}}</td>
+					<td>{{bus.origin}}</td>
+					<td>
+						<a class = "btn btn-sm btn-info" href="{% url 'bus-page' bus.id %}" >
+							View</a> </td>
+					<td>
+						<a class = "btn btn-sm btn-info" href="{% url 'update_bus' bus.id %}" >
+							Update</a> </td>
+					<td>
+						<a class = "btn btn-sm btn-danger" href="{% url 'delete_bus' bus.id %}" >
+							Delete</a> </td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+</div>
+
+
+
+
+{% endblock %}

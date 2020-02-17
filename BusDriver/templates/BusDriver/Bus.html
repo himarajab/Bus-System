@@ -1,0 +1,30 @@
+{%  extends 'BusDriver/main.html' %}
+
+{% block content %}
+
+	<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Bus:</h5>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="">Update Bus</a>
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Bus Information</h5>
+			<hr>
+			<p>destination: {{bus.destination}}</p>
+			<p>from: {{bus.origin}}</p>
+			<p>SeatsNumber: {{bus.SeatsNumber}}</p>
+			<p>DepartureTime: {{bus.DepartureTime}}</p>
+			<p>DriverName: {{bus.drivername.name}}</p>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}

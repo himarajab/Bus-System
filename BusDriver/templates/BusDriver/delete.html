@@ -1,0 +1,18 @@
+{%extends 'BusDriver/main.html'%}
+{%load static%}
+{%block content%}
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <form method="POST" action="{% url 'delete_driver' driver.id %}">
+                {%csrf_token%}
+                <a class="btn btn-warning" href="{% url 'home' %}">cancle</a>
+                <input class="btn btn-danger" type="submit" name="confirm">
+            </form>
+        </div>
+    </div>
+</div>
+<p>are you sure u want delete "{{driver}}"?</p>
+
+{%endblock%}

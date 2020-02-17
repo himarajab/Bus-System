@@ -1,0 +1,19 @@
+{%extends 'BusDriver/main.html'%}
+{%load static%}
+{%block content%}
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="body">
+            <form method="POST" action="">
+                {%csrf_token%}
+                    {{form}}
+                    <br>
+                <input type="submit" value="submit" >
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{%endblock%}
