@@ -8,7 +8,7 @@
             <form method="POST" action="{% url 'delete_driver' driver.id %}">
                 {%csrf_token%}
                 <a class="btn btn-warning" href="{% url 'home' %}">cancle</a>
-                <input class="btn btn-danger" type="submit" name="confirm">
+                <input class="btn btn-danger" type="submit" name="confirm" value="confirm">
             </form>
         </div>
     </div>

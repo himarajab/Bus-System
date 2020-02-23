@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'BusDriver',
+    'BusDriver.apps.BusdriverConfig',
     'django_filters',
 ]
 
@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'BusDriver',
         'USER' : 'postgres',
-        'PASSWORD' : 'A1_postgres',
+        'PASSWORD' : '',
         'HOST' : 'localhost',
         'PORT': '5432'
     }

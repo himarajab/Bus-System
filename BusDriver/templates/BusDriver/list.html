@@ -1,0 +1,25 @@
+%extends 'BusDriver/main.html'%}
+{%load static%}
+{%block content%}
+
+<table class="table">
+    <tr>
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">origin</th>
+                <th scope="col">destination</th>
+                <th scope="col">DepartureTime</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bus in buses %}
+            <tr>
+                <td>{{bus.origin}}</td>
+                <td>{{bus.destination}}</td>
+                <td>{{bus.DepartureTime}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+{%endblock%}

@@ -8,7 +8,9 @@ class DriverForm(forms.ModelForm):
         model = Driver
         fields = '__all__'
 
+
 class BusForm(forms.ModelForm):
     class Meta:
         model = Bus
         fields = '__all__'
+

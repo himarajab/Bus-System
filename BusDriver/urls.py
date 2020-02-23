@@ -10,8 +10,12 @@ urlpatterns = [
 
 
     path('bus/<int:pk>/', views.bus, name='bus-page'),
-    path('update_bus/<int:pk>/', views.update_bus, name='update_bus'),
+    # path('update_bus/<int:pk>/', views.update_bus, name='update_bus'),
     path('delete_bus/<int:pk>/', views.delete_bus, name='delete_bus'),
     path('create_bus/', views.create_bus, name='create_bus'),
+    # path('bus/create', views.BusCreateView.as_view(),
+    #      name='bus-create'),
+    path('bus/<int:pk>/update', views.BusUpdateView.as_view(),
+         name='bus-update'),
 
 ]
